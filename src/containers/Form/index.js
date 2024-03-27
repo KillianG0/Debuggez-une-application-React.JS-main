@@ -12,11 +12,15 @@ const Form = ({ onSuccess, onError }) => {
     async (evt) => {
       evt.preventDefault();
       setSending(true);
+      console.log("l'envoi est bon");
       // We try to call mockContactApi
       try {
         await mockContactApi();
+        console.log("en cours");
         setSending(false);
+        onSuccess();                              // Ajout de onSuccess() pour régler la comfirmation de l'envoi du formulaire 
       } catch (err) {
+        console.log("An error occurred:", err)
         setSending(false);
         onError(err);
       }

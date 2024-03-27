@@ -13,7 +13,7 @@ const EventList = () => {
   const { data, error } = useData();
   const [type, setType] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-  // cherche dans data les event , deviennent la valeur type et assure que seuls les event dont le type correspond au type sélectionné sont filtré.
+  // cherche dans data les event , retourne valeur type dans event et assure que seuls les event dont le type correspond au type sélectionné sont filtré.
   const filteredEvents = (
     (!type
       ? data?.events
